@@ -15,10 +15,19 @@
 		.elevation polygon {
 			fill:white;
 			fill-opacity:0.03;
-			stroke:white;
 			stroke-width:0px;
-			transition:all 1s;
+			transition:stroke-width 1s ease-in;
 
+		}
+		.submerged path,
+		.submerged polygon {
+
+			stroke:#61788C;
+			stroke-width:100px;
+			stroke-opacity:1;
+			fill-opacity:1;
+			fill:#8093A2;
+			transition:stroke-width 1s ease-in;
 		}
 		body {
 			-webkit-perspective:1600px;
@@ -55,8 +64,8 @@
 
 		.wateredge path,
 		.wateredge polygon {
-			fill-opacity:0.2;
-			stroke-width:0.25px;
+			fill-opacity:1;
+			fill:#8093A2;
 		}
 		#sidebar {
 			right:0px;
@@ -28492,10 +28501,15 @@
 			$('#ice').attr('stroke-width',(sliderval^1.8)*15-15);
 
 		    $('#water').css('-webkit-transform','rotateX('+xrotate+'deg) translateZ('+(sliderval*0.5+214)+'px)');
+
+		    //Set wateredge for each slide toggle
 		    $('.wateredge').attr('class','elevation');
+		    //$('.submerged').attr('class','elevation');
+
 		    $('#group'+targetgroup).attr('class','elevation wateredge');
 
-			
+			$('#group'+(targetgroup-10)).attr('class','elevation submerged');
+
 			//simulate water by lowering opacity of underwater elevations
 			//$('.elevation').each(function(index){$(this).css('opacity',1-(sliderval-index)*0.08)})	
 
