@@ -82,11 +82,9 @@
 			<div id='counter'>0</div><button onclick='increment(100)'>go to 500</button>
 	</div>	
 
-	<div style='position:fixed; bottom:0px; left:0px; -webkit-perspective:1600px;opacity:0.5;padding:20px;'>
 		<svg width='50' height='50' id='compass' style='-webkit-transform:rotateX(40deg) rotateZ(-45deg)'>
 <path fill='white' d="M25,0C11.193,0,0,11.193,0,25c0,13.807,11.193,25,25,25c13.807,0,25-11.193,25-25V0H25z M24.234,37.795l-3.654-3.654l4.359-16.157L24.856,17.9c-1.694,1.93-2.928,3.281-3.701,4.055l-6.381,6.381l-2.569-2.571l13.561-13.56l3.626,3.626l-4.267,16.047l0.064,0.064c1.671-1.855,2.869-3.148,3.599-3.877l6.419-6.419l2.588,2.588L24.234,37.795z"/>
 		</svg>
-	</div>	
 	<script>
 
 		var currentx=0;
@@ -219,7 +217,7 @@
 		var x=lonx(lon)+'%';
 		var y=laty(lat)+'%';
 
-		$('#vertrotator').append('<div class="placelabel" id="iamhere" style="top:'+x+';left:'+y+'"><div class="labeltext" style="background:purple;border-radius:10px"> You are here</div><div class="labelline" style="border:2px solid purple"></div></div>');
+		$('#vertrotator').append('<div class="placelabel" id="iamhere" style="-webkit-transform:rotateX(-90deg) rotateY('+currentx+'deg); top:'+x+';left:'+y+'"><div class="labeltext" style="background:purple;border-radius:10px"> You are here</div><div class="labelline" style="border:2px solid purple"></div></div>');
 		}
 	</script>	
 	</body>
